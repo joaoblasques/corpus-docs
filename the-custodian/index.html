@@ -1,0 +1,856 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A personal knowledge base that tends itself — sources in, cited pages out.">
+      
+      
+      
+        <link rel="canonical" href="https://joaoblasques.github.io/corpus-docs/the-custodian/">
+      
+      
+        <link rel="prev" href="../collectors/">
+      
+      
+        <link rel="next" href="../under-the-hood/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+    
+    
+      
+        <title>The Custodian - Corpus</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,700,700i%7CIBM+Plex+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"IBM Plex Sans";--md-code-font:"IBM Plex Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-custodian" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Corpus" class="md-header__button md-logo corpus-logo" aria-label="Corpus" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 22v-2s5-2 10-2 10 2 10 2v2zm9.3-12.9c-1.2-3.9-7.3-3-7.3-3s.2 7.8 5.9 6.6C9.5 9.8 8 9 8 9c2.8 0 3 3.4 3 3.4V17h2v-4.2s0-3.9 3-4.9c0 0-2 3-2 5 7 .7 7-8.9 7-8.9s-8.9-1-9.7 5.1"/></svg>
+
+      <span class="corpus-wordmark">Corpus</span>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <nav class="corpus-header-nav" aria-label="Corpus">
+      <a href="../the-idea/">The Idea</a>
+      <a href="../how-it-works/">How It Works</a>
+      <a href="../collectors/">Collectors</a>
+      <a href="./">The Custodian</a>
+    </nav>
+    <div class="corpus-header-spacer"></div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/joaoblasques/corpus" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    corpus
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Corpus" class="md-nav__button md-logo" aria-label="Corpus" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 22v-2s5-2 10-2 10 2 10 2v2zm9.3-12.9c-1.2-3.9-7.3-3-7.3-3s.2 7.8 5.9 6.6C9.5 9.8 8 9 8 9c2.8 0 3 3.4 3 3.4V17h2v-4.2s0-3.9 3-4.9c0 0-2 3-2 5 7 .7 7-8.9 7-8.9s-8.9-1-9.7 5.1"/></svg>
+
+    </a>
+    Corpus
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/joaoblasques/corpus" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    corpus
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../the-idea/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The Idea
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-it-works/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How It Works
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../collectors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Collectors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    The Custodian
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    The Custodian
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#four-data-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Four data layers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#one-harness-three-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      One harness, three modes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="One harness, three modes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-gardener-continuous-corpus-tending" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Gardener — continuous corpus tending
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adaptive-ingest-dynamic-fan-out-with-escalation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adaptive Ingest — dynamic fan-out with escalation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-dreamer-idle-consolidation" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Dreamer — idle consolidation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tiered-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tiered governance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safety-grounded-in-real-lessons" class="md-nav__link">
+    <span class="md-ellipsis">
+      Safety, grounded in real lessons
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-vision-loop-adapt-dream" class="md-nav__link">
+    <span class="md-ellipsis">
+      The vision: loop → adapt → dream
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../under-the-hood/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Under the Hood
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../using-it-well/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using It Well
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../roadmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Roadmap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#four-data-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Four data layers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#one-harness-three-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      One harness, three modes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="One harness, three modes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-gardener-continuous-corpus-tending" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Gardener — continuous corpus tending
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adaptive-ingest-dynamic-fan-out-with-escalation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adaptive Ingest — dynamic fan-out with escalation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-dreamer-idle-consolidation" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Dreamer — idle consolidation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tiered-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tiered governance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safety-grounded-in-real-lessons" class="md-nav__link">
+    <span class="md-ellipsis">
+      Safety, grounded in real lessons
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-vision-loop-adapt-dream" class="md-nav__link">
+    <span class="md-ellipsis">
+      The vision: loop → adapt → dream
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="the-custodian">The Custodian<a class="headerlink" href="#the-custodian" title="Permanent link">&para;</a></h1>
+<p>A personal knowledge base is only as useful as the effort you're willing to keep putting into it. Most systems decay the moment life gets busy — stubs stay stubs, cross-references drift, half-ingested sources accumulate without ever becoming something you can actually query. The Custodian is the answer to that decay: an autonomous runtime that keeps the corpus in good shape without requiring continuous human attention.</p>
+<p>The ambition has three axes:</p>
+<ul>
+<li><strong>Continuous-iteration loops</strong> — the corpus is never "done"; the Gardener tends it round the clock, filling thin pages, fixing integrity issues, and surfacing what's drifted out of date.</li>
+<li><strong>Adaptive workflows</strong> — the pipeline adjusts mid-run based on what it finds: routing harder cases to a stronger model, scaling out workers for large batches, escalating when uncertainty is too high to act alone.</li>
+<li><strong>"Dreaming"</strong> — during quiet periods, the system consolidates what it knows, draws connections across domains, and proposes structural improvements — the way a human expert might synthesize overnight what they learned during the day.</li>
+</ul>
+<div class="admonition quote">
+<p class="admonition-title">The core design principle</p>
+<p>Generated content is <strong>never</strong> trusted blindly. Every proposed change passes through a verifier before it can commit, and anything that doesn't clear the bar is reverted and queued for human review. The corpus's integrity is non-negotiable.</p>
+</div>
+<hr />
+<h2 id="four-data-layers">Four data layers<a class="headerlink" href="#four-data-layers" title="Permanent link">&para;</a></h2>
+<p>The Custodian operates across a stack of four distinct layers, each with different trust levels and different rules about what can be written to them.</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Contents</th>
+<th>Trust / mutability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>L0 — Raw</strong></td>
+<td>Immutable source files as collected</td>
+<td>Read-only; never modified after initial write</td>
+</tr>
+<tr>
+<td><strong>L1 — Corpus</strong></td>
+<td>The cited, cross-linked knowledge pages</td>
+<td>High trust; written by ingest, maintained by Gardener; every change auditable</td>
+</tr>
+<tr>
+<td><strong>L2 — Learned</strong></td>
+<td>Meta-synthesis pages + an agent-owned heuristics store</td>
+<td>Derived, non-authoritative; proposed by the Dreamer, promoted only on human sign-off</td>
+</tr>
+<tr>
+<td><strong>Audit</strong></td>
+<td>A review queue + a digest of every action taken</td>
+<td>Append-only; the full history of what the system did and why</td>
+</tr>
+</tbody>
+</table>
+<p>The separation is deliberate. L0 being immutable means every corpus claim can always be traced back to an original source. L2 being non-authoritative means the system can speculate and synthesize without contaminating the vetted knowledge in L1. The audit layer means nothing is silent — every action the Custodian takes is recorded, reviewable, and reversible.</p>
+<hr />
+<h2 id="one-harness-three-modes">One harness, three modes<a class="headerlink" href="#one-harness-three-modes" title="Permanent link">&para;</a></h2>
+<p>The Custodian isn't a single monolithic agent — it's a shared safety harness that three distinct operating modes plug into. The harness enforces the governance rules; the modes each have their own purpose and rhythm.</p>
+<h3 id="the-gardener-continuous-corpus-tending">The Gardener — continuous corpus tending<a class="headerlink" href="#the-gardener-continuous-corpus-tending" title="Permanent link">&para;</a></h3>
+<p>The Gardener runs on a loop, finding thin or stale pages and improving them. Its job is straightforward in description and surprisingly subtle in execution: take a <code>stub</code> page, read the sources it cites, and expand it into a fully-cited <code>draft</code> that would satisfy the provenance rules in the operating manual.</p>
+<p>The clever part is the <em>dual-model critic pattern</em>. The writer — running on a strong model — produces the improved page. An independent fact-checker — running on a cheaper model — then reviews it against the original sources. The critic is a <strong>distinct process</strong>, not a self-review, which means it actually catches the writer's mistakes rather than rubber-stamping its own output.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Why a separate critic matters</p>
+<p>A model asked to review its own output tends to rationalize rather than challenge. By running the critic on a different, cheaper model with no shared context from the writer's session, you get genuine adversarial pressure at low marginal cost.</p>
+</div>
+<p>The critic is <strong>fail-closed</strong>: the Gardener only auto-commits a change when <em>both</em> the lint check and the fact-check pass. If either fails, the proposed change is reverted and the page is placed in the human review queue with a note explaining what the critic objected to.</p>
+<p><strong>In its first real run against the corpus, the Gardener filled 6 of 8 eligible thin pages.</strong> The fact-checker correctly blocked the remaining two — catching a misattributed quote that the writer had confidently placed under the wrong source, an over-claim that went meaningfully beyond what the cited text actually said, and a broken cross-reference that would have orphaned a page. Nothing fabricated reached the corpus.</p>
+<h3 id="adaptive-ingest-dynamic-fan-out-with-escalation">Adaptive Ingest — dynamic fan-out with escalation<a class="headerlink" href="#adaptive-ingest-dynamic-fan-out-with-escalation" title="Permanent link">&para;</a></h3>
+<p>Standard ingest handles the routine case well: a batch of sources arrives, they're clustered by domain, workers run in parallel, the coordinator integrates the results. But real batches aren't uniform — some sources are dense and multi-domain, some are ambiguous to route, some produce so many candidate pages they warrant a sanity check before being committed.</p>
+<p>Adaptive Ingest adds a control layer on top of the base pipeline:</p>
+<ul>
+<li><strong>Dynamic fan-out</strong>: worker count scales with batch size and source heterogeneity rather than being fixed.</li>
+<li><strong>Model escalation</strong>: when a worker encounters a source it's uncertain about — ambiguous routing, conflicting claims, complex multi-entity extraction — it escalates to a stronger model for that source only. The rest of the batch continues uninterrupted.</li>
+<li><strong>Completeness critic</strong>: after integration, a critic pass checks whether the page count is plausible given the sources processed. A batch of 20 substantive sources that produces 3 pages is suspicious; the critic flags it rather than letting the coordinator close the run.</li>
+</ul>
+<h3 id="the-dreamer-idle-consolidation">The Dreamer — idle consolidation<a class="headerlink" href="#the-dreamer-idle-consolidation" title="Permanent link">&para;</a></h3>
+<p>The Dreamer runs during quiet periods, after the nightly collect-and-ingest cycle is complete and no active tasks are pending. Its purpose is synthesis: finding connections across domains that routine ingest misses because each worker only sees its own cluster.</p>
+<p>The Dreamer can propose:</p>
+<ul>
+<li><strong>Cross-domain synthesis pages</strong> — when the same concept appears independently in multiple domains, a synthesis page that links them adds navigational value the individual pages can't provide alone.</li>
+<li><strong>Structural improvements</strong> — reorganization suggestions, domain merges, or splits when the corpus has grown enough that the current shape no longer serves it.</li>
+<li><strong>Heuristic refinements</strong> — observed patterns in what the Gardener's fact-checker blocks most often, what routing decisions cluster together, what page shapes seem to get the most cross-links. These go into the L2 heuristics store as candidates, not into L1.</li>
+</ul>
+<p>Everything the Dreamer produces lands in the review queue first. Proposed pages are labelled as Dreamer-generated; structural suggestions are formatted as proposals with explicit rationale. Learned heuristics only graduate from L2 into the operating manual with explicit human sign-off. The Dreamer speculates productively; it doesn't decide.</p>
+<hr />
+<h2 id="tiered-governance">Tiered governance<a class="headerlink" href="#tiered-governance" title="Permanent link">&para;</a></h2>
+<p>The governance model is the Custodian's most important feature. Every proposed change — whether from the Gardener, Adaptive Ingest, or the Dreamer — passes through the same decision gate before anything reaches the corpus.</p>
+<pre class="mermaid"><code>flowchart TD
+    A[Proposed change] --&gt; B{Verifier:\nlint + fact-check}
+    B -- "Both pass" --&gt; C{Reversible?}
+    B -- "Either fails" --&gt; D[Revert]
+    C -- "Yes" --&gt; E[Auto-commit to corpus]
+    C -- "No" --&gt; F[Park in review queue]
+    D --&gt; F
+    F --&gt; G[Human review]
+    G -- "Approved" --&gt; H[Apply + commit]
+    G -- "Rejected" --&gt; I[Discard with audit note]
+    E --&gt; J[Append to action digest]
+    H --&gt; J</code></pre>
+<p>The key properties this enforces:</p>
+<ul>
+<li><strong>Verifier first, always.</strong> No change commits without passing lint and fact-check. The verifier has no memory of the change that produced the proposal; it evaluates the output on its own merits.</li>
+<li><strong>Reversibility gates auto-commit.</strong> Even a change that passes verification must be reversible to auto-commit. A new page or an expansion of an existing page is reversible (git revert restores the prior state). A domain merge or a page deletion is not — those always go to the review queue regardless of how cleanly they pass verification.</li>
+<li><strong>Review queue is the safe default.</strong> When in doubt, park it. The queue is visible; the corpus is protected.</li>
+</ul>
+<hr />
+<h2 id="safety-grounded-in-real-lessons">Safety, grounded in real lessons<a class="headerlink" href="#safety-grounded-in-real-lessons" title="Permanent link">&para;</a></h2>
+<p>Autonomous agents are powerful and, when something goes wrong, expensive. The Custodian's safety model is grounded in concrete failure modes — some observed in the wild, some avoided by design.</p>
+<p><strong>Hard iteration caps.</strong> Every mode has a maximum number of pages it may touch in a single run. A run that hits the cap stops, commits what it has, and logs a warning rather than continuing indefinitely.</p>
+<p><strong>Wall-clock limits.</strong> Independent of page count, each run has a maximum wall-clock duration. Long-running background processes have a way of quietly compounding their impact; the clock kills them before that becomes a problem.</p>
+<p><strong>Loop detection by fingerprint.</strong> Before each iteration, the Gardener hashes the set of pages it's considering and compares it to the previous iteration's hash. If the set hasn't changed — if it's going in circles, re-evaluating the same pages without making progress — the run stops immediately.</p>
+<div class="admonition warning">
+<p class="admonition-title">Why loop detection matters</p>
+<p>Unbounded agent loops are a real failure mode. An agent that repeatedly tries and fails to make progress doesn't stop on its own — it keeps consuming resources until something external interrupts it. The fingerprint check makes "no progress" an explicit termination condition rather than an implicit assumption.</p>
+</div>
+<p><strong>Main-branch-only commits.</strong> The Custodian commits only to the main branch, verified at the point of commit (not just at run start — a time-of-check / time-of-use race once caused an early version to commit to a feature branch). Pre-commit re-verification closes that gap.</p>
+<p><strong>Immutable raw layer.</strong> L0 is never written by the Custodian. Sources, once collected, are permanent records. The corpus can always be rebuilt from them.</p>
+<p><strong>Action digest.</strong> Every change the Custodian makes — every page written, every commit staged, every item parked in the review queue — is appended to the action digest in the audit layer. Nothing is silent. A human can always open the digest and understand exactly what the system did and why.</p>
+<hr />
+<h2 id="the-vision-loop-adapt-dream">The vision: loop → adapt → dream<a class="headerlink" href="#the-vision-loop-adapt-dream" title="Permanent link">&para;</a></h2>
+<p>The Gardener is in production. Adaptive Ingest handles nightly batch runs. The Dreamer is the next frontier.</p>
+<p>Together, they describe a trajectory: a knowledge base that doesn't require you to tend it every day, that gets richer on its own as sources accumulate, that surfaces connections you wouldn't have noticed manually, and that does all of this without ever silently changing things you'd want to review.</p>
+<p>The operating manual — the schema, the routing rules, the provenance discipline — remains human-owned. Learned heuristics that the Dreamer discovers can <em>propose</em> amendments, but they graduate into the manual only with explicit sign-off. The system gets smarter; the human stays in control of what "smart" means.</p>
+<div class="admonition tip">
+<p class="admonition-title">The north star</p>
+<p>A knowledge base you can trust is more valuable than a knowledge base that's merely large. Every design decision in the Custodian — the dual-model critic, the fail-closed verifier, the review queue, the loop detector — is in service of that trust.</p>
+</div>
+<hr />
+<p><strong>Next:</strong> <a href="../under-the-hood/">Under the Hood</a> — the technical architecture behind collectors, ingest, and the Custodian runtime.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+<footer class="md-footer corpus-footer">
+  <div class="corpus-footer-inner md-grid">
+    <div class="corpus-footer-brand">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 22v-2s5-2 10-2 10 2 10 2v2zm9.3-12.9c-1.2-3.9-7.3-3-7.3-3s.2 7.8 5.9 6.6C9.5 9.8 8 9 8 9c2.8 0 3 3.4 3 3.4V17h2v-4.2s0-3.9 3-4.9c0 0-2 3-2 5 7 .7 7-8.9 7-8.9s-8.9-1-9.7 5.1"/></svg>
+
+      <span class="corpus-footer-name">Corpus</span>
+      <span class="corpus-footer-tagline">a knowledge base that tends itself</span>
+    </div>
+    <div class="corpus-footer-meta">sources in &middot; cited pages out</div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.sections", "navigation.top", "content.code.copy", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
+      
+        <script src="../assets/graph.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{#
+  Corpus "Archive" theme — font loading.
+  Replaces the old Lora <link>. Loads the display serif (Newsreader),
+  body sans (IBM Plex Sans) and mono (IBM Plex Mono).
+
+  Also set in mkdocs.yml so Material wires them into --md-text-font / --md-code-font:
+
+    theme:
+      font:
+        text: IBM Plex Sans
+        code: IBM Plex Mono
+#}
+{% block extrahead %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+{% endblock %}

@@ -1,0 +1,547 @@
+/* ============================================================================
+   Corpus — "Archive" theme  (redesign of the old "Knowledge Garden")
+   Warm paper · muted moss · ochre citation accent · Newsreader + IBM Plex
+   Drop-in replacement for stylesheets/extra.css in the MkDocs-Material site.
+   ============================================================================ */
+
+/* ----------------------------------------------------------------------------
+   1. Design tokens  →  mapped onto Material's CSS custom properties
+   ---------------------------------------------------------------------------- */
+:root {
+  /* brand */
+  --md-primary-fg-color:        #4c5e40;   /* moss */
+  --md-primary-fg-color--light: #6f8e6f;
+  --md-primary-fg-color--dark:  #3a4a30;   /* moss-deep */
+  --md-accent-fg-color:         #a9762a;   /* ochre */
+
+  /* corpus palette (used by rules below) */
+  --corpus-paper:     #f2ede1;
+  --corpus-surface:   #fbf8f0;
+  --corpus-band:      #ece5d6;
+  --corpus-ink:       #2b2820;
+  --corpus-ink-soft:  #6a655a;
+  --corpus-ink-faint: #98917f;
+  --corpus-hairline:  rgba(43,40,32,0.13);
+  --corpus-hairline-2:rgba(43,40,32,0.08);
+  --corpus-moss:      #4c5e40;
+  --corpus-moss-deep: #3a4a30;
+  --corpus-ochre:     #a9762a;
+  --corpus-active:    #e6ead9;
+}
+
+[data-md-color-scheme="default"] {
+  --md-default-bg-color:        var(--corpus-paper);
+  --md-default-fg-color:        var(--corpus-ink);
+  --md-default-fg-color--light: var(--corpus-ink-soft);
+  --md-default-fg-color--lighter: var(--corpus-ink-faint);
+  --md-typeset-a-color:         var(--corpus-moss);
+  --md-code-bg-color:           var(--corpus-band);
+  --md-code-fg-color:           var(--corpus-ink);
+  --md-footer-bg-color:         var(--corpus-band);
+  --md-footer-fg-color:         var(--corpus-ink-soft);
+}
+
+/* Dark scheme — warm charcoal, not the default cold slate */
+[data-md-color-scheme="slate"] {
+  --md-hue: 30;                              /* warm the slate base */
+  --md-primary-fg-color:  #9cbf93;
+  --md-primary-fg-color--dark: #b6d4ac;
+  --md-accent-fg-color:   #e0a747;
+
+  --corpus-paper:     #1b1815;
+  --corpus-surface:   #232019;
+  --corpus-band:      #201d17;
+  --corpus-ink:       #ece5d6;
+  --corpus-ink-soft:  #b3ab9a;
+  --corpus-ink-faint: #8a8272;
+  --corpus-hairline:  rgba(236,229,214,0.15);
+  --corpus-hairline-2:rgba(236,229,214,0.08);
+  --corpus-moss:      #9cbf93;
+  --corpus-moss-deep: #b6d4ac;
+  --corpus-ochre:     #e0a747;
+  --corpus-active:    #2c3527;
+
+  --md-default-bg-color:        var(--corpus-paper);
+  --md-default-fg-color:        var(--corpus-ink);
+  --md-default-fg-color--light: var(--corpus-ink-soft);
+  --md-default-fg-color--lighter: var(--corpus-ink-faint);
+  --md-typeset-a-color:         var(--corpus-moss);
+  --md-code-bg-color:           var(--corpus-band);
+  --md-code-fg-color:           var(--corpus-ink);
+  --md-footer-bg-color:         var(--corpus-band);
+}
+
+/* ----------------------------------------------------------------------------
+   2. Typography
+   Body: IBM Plex Sans · Display headings: Newsreader · Mono/meta: IBM Plex Mono
+   (font <link>s injected via overrides/main.html; also set in mkdocs.yml
+    theme.font.text: "IBM Plex Sans" / code: "IBM Plex Mono")
+   ---------------------------------------------------------------------------- */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+  font-family: "Newsreader", Georgia, serif;
+  letter-spacing: -0.015em;
+}
+.md-typeset h1 { font-weight: 500; font-size: 2.6rem; line-height: 1.06; color: var(--corpus-ink); }
+.md-typeset h2 { font-weight: 600; }
+.md-typeset h3 { font-weight: 600; }
+
+/* Monospace eyebrows / metadata helper (add class="eyebrow" in Markdown) */
+.md-typeset .eyebrow {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--corpus-ochre);
+}
+
+/* ----------------------------------------------------------------------------
+   3. Header / footer chrome
+   ---------------------------------------------------------------------------- */
+.md-header {
+  background-color: color-mix(in srgb, var(--corpus-paper) 86%, transparent);
+  backdrop-filter: blur(12px);
+  color: var(--corpus-ink);
+  box-shadow: none;
+  border-bottom: 1px solid var(--corpus-hairline);
+}
+.md-header--shadow { box-shadow: none; }
+.md-tabs { background: transparent; }
+
+.corpus-footer {
+  background: var(--corpus-band);
+  border-top: 1px solid var(--corpus-hairline);
+  color: var(--corpus-ink-soft);
+}
+.corpus-footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 18px;
+  padding: 40px 0;
+}
+.corpus-footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--corpus-ink-soft);
+}
+.corpus-footer-brand svg { fill: var(--corpus-ink-faint); width: 20px; height: 20px; }
+.corpus-footer-name {
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--corpus-ink);
+}
+.corpus-footer-tagline,
+.corpus-footer-meta {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  color: var(--corpus-ink-faint);
+}
+.corpus-footer-tagline { margin-left: 6px; }
+
+/* Corpus header: logo + static wordmark, inline nav, spacer, then the
+   stock search/palette/repo controls pushed to the right (see
+   overrides/partials/header.html). Replaces Material's default logo-only
+   header + scroll-triggered page title. */
+.md-header__inner.md-grid { align-items: center; gap: 30px; }
+.md-header .corpus-logo.md-logo { display: flex; align-items: center; gap: 11px; }
+.corpus-wordmark {
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 23px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--corpus-ink);
+}
+.corpus-header-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-left: 6px;
+}
+.corpus-header-nav a {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 14px;
+  color: var(--corpus-ink-soft);
+  white-space: nowrap;
+}
+.corpus-header-nav a:hover { color: var(--corpus-ochre); }
+.corpus-header-spacer { flex: 1; }
+@media screen and (max-width: 76.234375em) {
+  .corpus-header-nav { display: none; }
+}
+
+/* ----------------------------------------------------------------------------
+   4. Home hero  (wrap the intro block in <div class="hero"> … </div>)
+   ---------------------------------------------------------------------------- */
+.md-typeset .hero { padding: 2.6rem 0 0.4rem; }
+.md-typeset .hero-eyebrow {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--corpus-ochre);
+  margin: 0 0 1rem;
+}
+.md-typeset .hero h1 {
+  font-size: 3.6rem;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+.md-typeset .hero h1 + p {
+  font-family: "Newsreader", Georgia, serif;
+  font-style: italic;
+  font-size: 1.4rem;
+  color: var(--corpus-ink-soft);
+  margin-top: 0.9rem;
+  max-width: 34rem;
+}
+.md-typeset .hero-stats {
+  display: flex;
+  gap: 0;
+  margin-top: 2.4rem;
+  border-top: 1px solid var(--corpus-hairline);
+  border-bottom: 1px solid var(--corpus-hairline);
+  max-width: 34rem;
+}
+.md-typeset .hero-stat {
+  padding: 1.2rem 2.2rem 1.2rem 0;
+  border-right: 1px solid var(--corpus-hairline-2);
+}
+.md-typeset .hero-stat:last-child { border-right: none; padding-right: 0; }
+.md-typeset .hero-stat + .hero-stat { padding-left: 2.2rem; }
+.md-typeset .hero-stat-n {
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--corpus-ink);
+}
+.md-typeset .hero-stat-l {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--corpus-ink-faint);
+  margin-top: 0.45rem;
+}
+
+/* ----------------------------------------------------------------------------
+   5. Cards on the home grid — numbered eyebrow, hairline mesh, inverted CTA
+   ---------------------------------------------------------------------------- */
+.md-typeset .corpus-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--corpus-hairline);
+  border: 1px solid var(--corpus-hairline);
+  border-radius: 14px;
+  overflow: hidden;
+  margin: 0 0 1.5rem;
+}
+@media screen and (max-width: 60em) {
+  .md-typeset .corpus-card-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media screen and (max-width: 40em) {
+  .md-typeset .corpus-card-grid { grid-template-columns: 1fr; }
+}
+.md-typeset .corpus-card {
+  position: relative;
+  display: block;
+  background: var(--corpus-surface);
+  padding: 34px 32px;
+  color: var(--corpus-ink);
+  transition: background .18s ease;
+}
+.md-typeset .corpus-card:hover { background: var(--corpus-band); }
+.md-typeset .corpus-card-n {
+  display: block;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--corpus-ochre);
+  margin-bottom: 1rem;
+}
+.md-typeset .corpus-card strong {
+  display: block;
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--corpus-ink);
+  margin-bottom: 0.6rem;
+}
+.md-typeset .corpus-card strong a {
+  color: inherit;
+}
+.md-typeset .corpus-card strong a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+.md-typeset .corpus-card p {
+  font-size: 0.905rem;
+  line-height: 1.6;
+  color: var(--corpus-ink-soft);
+  margin: 0;
+}
+.md-typeset .corpus-card-more {
+  display: block;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.78rem;
+  margin-top: 1.25rem;
+}
+.md-typeset .corpus-card-more a { color: var(--corpus-moss); }
+.md-typeset .corpus-card-cta {
+  background: var(--corpus-ink);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.md-typeset .corpus-card-cta:hover { background: var(--corpus-moss-deep); }
+.md-typeset .corpus-card-cta strong {
+  color: var(--corpus-paper);
+  margin-bottom: 0.5rem;
+}
+.md-typeset .corpus-card-cta strong a { color: inherit; }
+.md-typeset .corpus-card-cta p {
+  color: var(--corpus-ink-faint);
+}
+
+/* Pipeline band — source dot-chips -> Inbox -> Ingest agent (inverted) ->
+   Corpus pages -> Indexes, joined by arrow glyphs. Replaces a mermaid
+   flowchart with the design's flat pill-card chain. */
+.md-typeset .corpus-pipeline {
+  background: var(--corpus-band);
+  border-top: 1px solid var(--corpus-hairline-2);
+  border-bottom: 1px solid var(--corpus-hairline-2);
+  margin: 2rem calc(50% - 50vw);
+  padding: 2.6rem calc(50vw - 50%);
+}
+.md-typeset .corpus-pipeline-eyebrow {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--corpus-ink-faint);
+  margin: 0 0 1.6rem;
+}
+.md-typeset .corpus-pipeline-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: nowrap;
+}
+.md-typeset .corpus-pipeline-sources {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.md-typeset .corpus-pipeline-source {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.8rem;
+  color: var(--corpus-ink-soft);
+}
+.md-typeset .corpus-pipeline-source .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.md-typeset .corpus-pipeline-arrow {
+  font-size: 1.25rem;
+  color: var(--corpus-ink-faint);
+}
+.md-typeset .corpus-pipeline-step {
+  background: var(--corpus-surface);
+  border: 1px solid var(--corpus-hairline);
+  border-radius: 10px;
+  padding: 18px 22px;
+  min-width: 150px;
+}
+.md-typeset .corpus-pipeline-step-title {
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--corpus-ink);
+}
+.md-typeset .corpus-pipeline-step-sub {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  color: var(--corpus-ink-faint);
+  margin-top: 5px;
+}
+.md-typeset .corpus-pipeline-step-sub-accent { color: var(--corpus-ochre); }
+.md-typeset .corpus-pipeline-step-inverted {
+  background: var(--corpus-ink);
+  border-color: var(--corpus-ink);
+}
+.md-typeset .corpus-pipeline-step-inverted .corpus-pipeline-step-title {
+  color: var(--corpus-paper);
+}
+.md-typeset .corpus-pipeline-caption {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--corpus-ink-soft);
+  max-width: 40rem;
+  margin: 1.9rem 0 0;
+}
+
+/* Below ~1360px the horizontal chain (source list + 4 pill-cards + arrows)
+   no longer fits on one line. flex-wrap would break it at an arbitrary
+   point (stranded arrows, cards colliding without a connector) depending
+   on exact width, so the row is nowrap above this breakpoint and switches
+   to an explicit vertical stack below it instead — never an in-between
+   half-wrapped state. */
+@media screen and (max-width: 1360px) {
+  .md-typeset .corpus-pipeline-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+  .md-typeset .corpus-pipeline-sources {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 8px;
+    margin-bottom: 20px;
+  }
+  .md-typeset .corpus-pipeline-step { min-width: 0; }
+  .md-typeset .corpus-pipeline-arrow {
+    align-self: center;
+    padding: 10px 0;
+    transform: rotate(90deg);
+  }
+}
+@media screen and (max-width: 480px) {
+  .md-typeset .corpus-pipeline { padding: 2rem calc(50vw - 50%); }
+  .md-typeset .corpus-pipeline-sources { flex-direction: column; gap: 7px; }
+}
+
+/* "Why this exists" — heading left, body + pull-quote right */
+.md-typeset .corpus-ethos {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 64px;
+  align-items: start;
+  margin: 1.5rem 0;
+}
+.md-typeset .corpus-ethos-title h2 { margin-top: 0; }
+@media screen and (max-width: 60em) {
+  .md-typeset .corpus-ethos { grid-template-columns: 1fr; gap: 1rem; }
+}
+
+/* ----------------------------------------------------------------------------
+   6. Admonitions / pull-quotes — left ochre rule, no icon chrome noise
+   ---------------------------------------------------------------------------- */
+.md-typeset .admonition,
+.md-typeset details {
+  border: none;
+  border-left: 3px solid var(--corpus-moss);
+  border-radius: 0 10px 10px 0;
+  background: var(--corpus-surface);
+  box-shadow: none;
+  font-size: 0.86rem;
+}
+.md-typeset .admonition.quote,
+.md-typeset .admonition.warning {
+  border-left-color: var(--corpus-ochre);
+}
+.md-typeset .admonition.quote > p:not(.admonition-title) {
+  font-family: "Newsreader", Georgia, serif;
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.45;
+  color: var(--corpus-ink);
+}
+/* Material colors .admonition-title's background/icon per type (info=blue,
+   warning=orange, abstract=cyan, …) via `.admonition.<type> .admonition-title`
+   rules — same specificity as a per-type override here, so list every
+   built-in type explicitly to reset them all to one flat/quiet treatment. */
+.md-typeset .admonition.note .admonition-title,
+.md-typeset .admonition.abstract .admonition-title,
+.md-typeset .admonition.info .admonition-title,
+.md-typeset .admonition.tip .admonition-title,
+.md-typeset .admonition.success .admonition-title,
+.md-typeset .admonition.question .admonition-title,
+.md-typeset .admonition.warning .admonition-title,
+.md-typeset .admonition.failure .admonition-title,
+.md-typeset .admonition.danger .admonition-title,
+.md-typeset .admonition.bug .admonition-title,
+.md-typeset .admonition.example .admonition-title,
+.md-typeset .admonition.quote .admonition-title {
+  background-color: transparent;
+  color: var(--corpus-ink);
+}
+.md-typeset .admonition.note .admonition-title::before,
+.md-typeset .admonition.abstract .admonition-title::before,
+.md-typeset .admonition.info .admonition-title::before,
+.md-typeset .admonition.tip .admonition-title::before,
+.md-typeset .admonition.success .admonition-title::before,
+.md-typeset .admonition.question .admonition-title::before,
+.md-typeset .admonition.failure .admonition-title::before,
+.md-typeset .admonition.danger .admonition-title::before,
+.md-typeset .admonition.bug .admonition-title::before,
+.md-typeset .admonition.example .admonition-title::before {
+  background-color: var(--corpus-ink-soft);
+}
+.md-typeset .admonition.quote .admonition-title::before,
+.md-typeset .admonition.warning .admonition-title::before {
+  background-color: var(--corpus-ochre);
+}
+
+/* ----------------------------------------------------------------------------
+   7. Tables — mono uppercase head, hairline rows
+   ---------------------------------------------------------------------------- */
+.md-typeset table:not([class]) {
+  border: none;
+  box-shadow: none;
+}
+.md-typeset table:not([class]) th {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--corpus-ink-faint);
+  background: transparent;
+  border-bottom: 1px solid var(--corpus-hairline);
+}
+.md-typeset table:not([class]) td {
+  border-bottom: 1px solid var(--corpus-hairline-2);
+  background: transparent;
+}
+
+/* ----------------------------------------------------------------------------
+   8. Knowledge-graph canvas
+   ---------------------------------------------------------------------------- */
+#corpus-graph {
+  height: 560px;
+  width: 100%;
+  border: 1px solid var(--corpus-hairline);
+  border-radius: 14px;
+  background: var(--corpus-surface);
+  margin: 1rem 0 0.4rem;
+}
+.graph-caption {
+  text-align: center;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--corpus-ink-faint);
+  margin-bottom: 1.4rem;
+}
+
+/* ----------------------------------------------------------------------------
+   9. Nav — active item gets a moss rule + soft wash
+   ---------------------------------------------------------------------------- */
+.md-nav__link--active,
+.md-nav__item .md-nav__link--active {
+  color: var(--corpus-moss-deep);
+  font-weight: 600;
+  background: var(--corpus-active);
+  border-left: 2px solid var(--corpus-moss);
+  border-radius: 0 4px 4px 0;
+}

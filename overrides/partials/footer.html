@@ -1,0 +1,15 @@
+{#
+  Corpus "Archive" theme — footer.
+  Replaces Material's default copyright/social meta bar with the design's
+  leaf + wordmark + tagline (left) and "sources in - cited pages out" (right).
+#}
+<footer class="md-footer corpus-footer">
+  <div class="corpus-footer-inner md-grid">
+    <div class="corpus-footer-brand">
+      {% include "partials/logo.html" %}
+      <span class="corpus-footer-name">{{ config.site_name }}</span>
+      <span class="corpus-footer-tagline">a knowledge base that tends itself</span>
+    </div>
+    <div class="corpus-footer-meta">sources in &middot; cited pages out</div>
+  </div>
+</footer>
